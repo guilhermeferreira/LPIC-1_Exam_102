@@ -1,0 +1,59 @@
+---------------------------------------
+ Set environment variables
+---------------------------------------
+
+There are two types of variables accessible in a shell session:
+
+- Environmental variables are defined for the current shell and are inherited
+  by any child shell or process.
+- Shell variables are contained exclusively within the shell which they were
+  defined.
+
+---------------------------------------
+  Environmental variables
+---------------------------------------
+
+The printenv(1) command displays all environment variables.
+
+  $ printenv
+
+Both printenv(1) and echo(1) commands can print a specific variable.
+
+  $ printenv SHELL
+
+  $ echo $SHELL
+
+In order to create an environment variable, use the export command.
+
+  $ VAR=VALUE
+  $ export VAR
+
+In order to destroy an environment variable, use the -n option from the
+export command.
+
+  $ export -n VAR
+
+---------------------------------------
+  Shell variables
+---------------------------------------
+
+The set command displays shell variables and functions.
+
+  $ set
+
+To display only the variables without functions (disable POSIX mode).
+
+  $ set -o posix
+
+and to enable POSIX mode again.
+
+  $ set +o posix
+
+In order to create a shell variable.
+
+  $ VAR=VALUE
+
+In order to destroy shell variables, use the unset command.
+
+  $ unset VAR
+

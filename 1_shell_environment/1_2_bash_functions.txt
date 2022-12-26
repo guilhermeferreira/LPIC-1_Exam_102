@@ -1,0 +1,48 @@
+---------------------------------------
+ Bash functions for frequent tasks
+---------------------------------------
+
+Bash Order of Execution
+
+1. Aliases.
+2. Bash functions.
+3. Bash built-in commands.
+4. On-disk commands.
+
+To discover if the command is an alias, function, built-in or on-disk, use the
+type command:
+
+  $ type <command>
+
+  $ type echo
+  echo is a shell builtin
+  $ type mkdir
+  mkdir is /usr/bin/mkdir
+
+---------------------------------------
+
+Shell Types
+
+- Interactive loging shell.
+
+- Noninteractive login shell.
+
+- Interactive non-login shell. When the user runs bash after login.
+
+- Noninteractive non-login shell. When we run a shell file. It executes any
+  file listed in $BASH_ENV variable.
+
+---------------------------------------
+
+Create a function
+
+  $ nano ~/.bashrc
+
+  # User specific aliases and functions
+  mkcd() {
+    mkdir -p $1
+    cd $1
+  }
+
+  $ source ~/.bashrc
+

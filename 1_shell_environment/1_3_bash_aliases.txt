@@ -1,0 +1,52 @@
+---------------------------------------
+ Bash aliases as shortcuts
+---------------------------------------
+
+Bash Order of Execution
+
+1. Aliases.
+2. Bash functions.
+3. Bash builtin commands.
+4. On-disk commands.
+
+---------------------------------------
+
+Display aliases
+
+The alias builtin command displays the aliases:
+
+  $ alias
+  alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+  alias egrep='egrep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias grep='grep --color=auto'
+  alias l='ls -CF'
+  alias la='ls -A'
+  alias ll='ls -alF'
+  alias ls='ls --color=auto'
+
+---------------------------------------
+
+Bypass aliases
+
+Prepend the command with a '\' to by bypass an alias, or use the "command".
+
+  $ ls           <- executes the "alias ls='ls --color=auto'"
+
+  $ \ls          <- executes the "ls" command
+
+  $ command ls   <- executes the on-disk "ls" command
+
+---------------------------------------
+
+Add aliases
+
+Edit the .bashrc to add an alias:
+
+  $ nano ~/.bashrc
+
+  # User specific aliases and functions  
+  alias ..="cd .."
+
+  $ source ~/.bashrc
+

@@ -1,0 +1,38 @@
+---------------------------------------
+ Maintain skeleton directories
+---------------------------------------
+
+When we create a new user, Linux creates the user's home directory based on a
+skeleton directory.
+
+  $ ls -la /etc/skel
+  total 8
+  drwxr-xr-x 1 root root 4096 Jul 28 14:28 .
+  drwxr-xr-x 1 root root 4096 Jan  3 11:35 ..
+  -rw-r--r-- 1 root root  220 Feb 25  2020 .bash_logout
+  -rw-r--r-- 1 root root 3771 Feb 25  2020 .bashrc
+  -rw-r--r-- 1 root root  807 Feb 25  2020 .profile
+
+Create a newfile.
+
+  $ sudo touch /etc/skel/newfile
+
+Create a new user on RHEL.
+
+  $ sudo useradd sally
+
+                  on Debian.
+
+  $ sudo adduser sally
+
+List the files from the user's home directory.
+
+  $ ls -la /home/sally/
+  total 8
+  drwxr-xr-x 1 sally sally 4096 Jan  4 19:21 .
+  drwxr-xr-x 1 root  root  4096 Jan  4 19:21 ..
+  -rw-r--r-- 1 sally sally  220 Jan  4 19:21 .bash_logout
+  -rw-r--r-- 1 sally sally 3771 Jan  4 19:21 .bashrc
+  -rw-r--r-- 1 sally sally  807 Jan  4 19:21 .profile
+  -rw-r--r-- 1 sally sally    0 Jan  4 19:21 newfile     <- HERE BOY!
+

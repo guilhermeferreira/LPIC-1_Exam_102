@@ -1,0 +1,21 @@
+---------------------------------------
+ Set command search path
+---------------------------------------
+
+Shell looks for commands in the PATH variable.
+
+The which(1) command displays in which path a command is located.
+
+  $ which <command>
+
+  $ which tar
+  /usr/bin/tar
+
+The whereis(1) command displays where the command, its source, and manual page
+are located.
+
+  $ whereis <command>
+
+  $ whereis tar
+  tar: /usr/bin/tar /usr/include/tar.h /usr/share/man/man1/tar.1.gz
+

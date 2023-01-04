@@ -1,0 +1,40 @@
+---------------------------------------
+ Using return codes
+---------------------------------------
+
+- Success = 0
+- Failure = 1-255
+- $? holds a command's return code
+
+---------------------------------------
+
+Bash Return Codes
+
+  ┌───────┬────────────────────────────┐
+  │ Code  │ Error Type                 │
+  ├───────┼────────────────────────────┤
+  ├───────┼────────────────────────────┤
+  │ 1     │ General error              │
+  ├───────┼────────────────────────────┤
+  │ 2     │ Misuse of shell built-in   │
+  ├───────┼────────────────────────────┤
+  │ 126   │ Command cannot be executed │
+  ├───────┼────────────────────────────┤
+  │ 127   │ Command not found          │
+  ├───────┼────────────────────────────┤
+  │ 128   │ Invalid argument to exit   │
+  ├───────┼────────────────────────────┤
+  │ 128+n │ Fatal error signal "n"     │
+  ├───────┼────────────────────────────┤
+  │ 130   │ Terminated by Ctrl-C       │
+  ├───────┼────────────────────────────┤
+  │ 255   │ Exit status out of range   │
+  └───────┴────────────────────────────┘
+
+---------------------------------------
+
+Bash Return Keywords
+
+- "return" returns a value of a function.
+- "exit" returns a value from a script.
+

@@ -1,0 +1,80 @@
+---------------------------------------
+ Conditional flow with "if, then fi"
+---------------------------------------
+
+If Conditional
+
+  if <condition>
+  then
+    <run code>
+  fi
+
+  if <condition> ; then
+    <run code>
+  fi
+
+
+If, Else Conditional
+
+  if <condition> ; then
+    <run code>
+  else
+    <run code>
+  fi
+
+
+If, Else If, Else Conditional
+
+  if <condition> ; then
+    <run code>
+  elif <condition> ; then
+    <run code>
+  else
+    <run code>
+  fi
+
+
+---------------------------------------
+
+The <condition> can be 
+
+  1. a test.
+
+  2. the successful execution of a command.
+
+
+---------------------------------------
+
+Conditional tests using single square brackets [ ] is the same as test(1)
+command (/usr/bin/test).
+
+  if [ <condition> ] ; then
+    <run code>
+  fi
+
+  - POSIX compliant.
+  - Work with older shells including Bourne.
+  - Perform file name expansion.
+  - Perform word splitting.
+  - Perform parameter expansion.
+  - Do not support &&, ||, <, and > operators. Shell interprets them.
+  - Require quoting to preserver variable values.
+
+
+Conditional tests using double square brackets [[ ]] is a Bash shell keyword.
+
+  if [[ <condition> ]] ; then
+    <run code>
+  fi
+
+  - Bash and Ksh specific.
+  - Do not work with older shells.
+  - Do not perform name expansion.
+  - Do not perform word splitting.
+  - Perform parameter expansion.
+  - Perform command substition.
+  - Support &&, ||, <, and > logical operators.
+  - Support automatic arithmetic evaluation of octal/hexaecimal.
+  - Support extended regular expression matches.
+  - Do not require quoting.
+

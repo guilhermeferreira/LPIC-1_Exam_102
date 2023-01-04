@@ -1,0 +1,18 @@
+---------------------------------------
+ Conditional flow with "case"
+---------------------------------------
+
+Case Statement
+
+  case $AGE in
+         [1-9]) echo "Very young" ;;&
+         [5-9]) echo "Child"      ;;
+        1[0-9]) echo "Teenager"   ;&
+    [2-9][0-9]) echo "Adult"      ;;
+             *) echo "Not an age" ;;
+  esac
+
+The ;; terminates the case statement.
+The ;;& checks if there're other matches.
+The ;& executes the next condition.
+

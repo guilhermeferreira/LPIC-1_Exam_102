@@ -1,0 +1,120 @@
+---------------------------------------
+ Introduction to Bash
+---------------------------------------
+
+CONDITIONALS
+
+
+Conditional tests for
+  - File ownnership.
+  - File permissions (readable, writable, executable).
+  - File type (regular file, directory, block and character device).
+  - Numeric equivalence.
+  - Text equivalence.
+
+
+If Condition
+
+  if [[ $PET = dog ]]; then
+    echo "Dog"
+  elif [[ $PET = cat ]]; then
+    echo "Cat"
+  else
+    echo "Unknown"
+  fi
+
+
+Case Statement
+
+  case "$PET" in
+    dog) echo "Dog" ;;
+    cat) echo "Cat" ;;
+    *) echo "Unknown" ;;
+  esac
+
+
+Integer Conditionals
+
+  if (( (A == 0 || B != 0) && C == 0)); then
+
+
+---------------------------------------
+
+ITERATION
+
+
+For Loop
+
+  for i in 1 2 3 4 5 ; do
+    echo $i
+  done
+
+
+C-Style For Loop
+
+  for (( i=1; i<=5; i++ )) ; do
+    echo $i
+  done
+
+
+While/Until Loop
+
+  i=1
+  while [ $i -lt 5 ] ; do
+    echo $i
+    i++
+  done
+
+
+---------------------------------------
+
+DATA STRUCTURES
+
+
+Indexed Arrays
+
+  $ mylist=('first' 'second' 'third')
+  $ echo ${mylist[1]}
+  $ for myitem in ${mylist[@]}; do echo ${myitem}; done
+
+
+Associative Arrays
+
+  $ declare -A mymap=([one]=first [two]=second [three]=third)
+  $ echo ${mymap[one]}
+
+
+---------------------------------------
+
+EXPANSIONS AND SUBSTITUTIONS
+
+
+Brace Expansion
+
+  $ mkdir /home/{old,new,dist,bugs}
+
+
+Arithmetic Expansion
+
+  $ echo $(( $i + 3 ))
+
+
+Command Substitution
+
+  $ echo $(whoami)
+
+
+Integer Math
+
+  (( a = 2 + 3 ))
+
+
+Extended Globs
+
+  $ ls *+(.jpg|.gif) 
+
+
+Extended Regular Expressions
+
+  if [[ $file =~ *.(txt|doc|docx|rtf)$ ]] ; then
+

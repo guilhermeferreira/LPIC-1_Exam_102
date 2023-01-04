@@ -1,0 +1,20 @@
+---------------------------------------
+ Use Command and Variable substituituion
+---------------------------------------
+
+Command substition can be done using $(command) or `command`.
+
+  $ echo "My user is $(whoami)"
+  My user is guilherme
+  $ echo "My user is `whoami`"
+  My user is guilherme
+
+However, nesting command substition can be done only with $(command).
+
+  $ echo "Permissions for find are $(ls -l $(which find))"
+  Permissions for find are -rwxr-xr-x 1 root root 320160 Feb 18  2020 /usr/bin/find
+
+  $ echo "Permissions for find are $(ls -l $(which find))"
+  $ echo "Permissions for find are $(ls -l /usr/bin/find)"
+  $ echo "Permissions for find are -rwxr-xr-x 1 root root 320160 Feb 18  2020 /usr/bin/find"
+

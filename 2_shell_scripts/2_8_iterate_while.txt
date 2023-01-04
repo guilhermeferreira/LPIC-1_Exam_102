@@ -1,0 +1,10 @@
+---------------------------------------
+ Iterate with "while" loops
+---------------------------------------
+
+While Loop Syntax
+
+  while [ <condition> ] ; do
+    <run code>
+  done
+

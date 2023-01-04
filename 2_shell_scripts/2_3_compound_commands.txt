@@ -1,0 +1,47 @@
+---------------------------------------
+ Execute compound commands
+---------------------------------------
+
+Semicolon ';' executes one command after the other.
+
+  $ echo "hello" ; echo "world"
+  hello
+  world
+
+Double ampersand '&&' executes the 2nd only if the 1st succeeds.
+
+  $ mkdir newfolder && echo "created"
+  created
+  $ mkdir newfolder && echo "created"
+  mkdir: cannot create directory '/tmp/newfolder': File exists
+
+Double pipes '||' executes the 2nd only if the 1st fails.
+
+  $ mkdir newfolder || echo "failed"
+  $ mkdir newfolder || echo "failed"
+  mkdir: cannot create directory '/tmp/newfolder1': File exists
+  failed
+
+Curly braces '{}' executes the commands together into the same shell.
+
+  $ { echo "hello" ; echo "world" ; } > file
+  $ cat file
+  hello
+  world
+
+  $ echo "hello" ; echo "world" > file
+  hello
+  $ cat file
+  world
+
+Parenthesis '()' executes all the commands together in a subshell, which has
+a different set of variables.
+
+  $ a=0 ; ( a=10 ; echo "in=$a" ) ; echo "out=$a"
+  in=10
+  out=0
+
+  $ a=0 ; { a=10 ; echo "in=$a"; } ; echo "out=$a"
+  in=10
+  out=10
+

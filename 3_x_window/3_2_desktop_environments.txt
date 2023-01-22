@@ -1,0 +1,34 @@
+---------------------------------------
+ About desktop environments
+---------------------------------------
+
+                                              ┌─────────────────────┐
+                                              │ Desktop Application │
+                                              ├─────────────────────┤
+                                              │ Desktop Environment │
+                                              ├─────────────────────┤
+                                              │    Window Manager   │
+                        ┌─────────────────────┴─────────────────────┤   ┌──────────┐
+                        │             GUI/Widget Toolkit            │   │ Mouse    │
+  ┌─────────────────────┼───────────────────────────────────────────┤   ├──────────┤
+  │         CLI         │               Window System               │<->│ Keyboard │
+  ├─────────────────────┴───────────────────────────────────────────┤   ├──────────┤
+  │                      Linux Operating System                     │   │ Screeen  │
+  └─────────────────────────────────────────────────────────────────┘   └──────────┘
+
+- Window System (X11 or Wayland) coordiates input and output of its clients to
+  and from the rest of the OS.
+
+- GUI Toolkit (GTK or Qt) contains graphical control elements (aka widgets) used
+  to build GUI programs.
+
+- Window Manager (Metacity for GNOME 2, Mutter for GNOME 3, or KWin for KDE).
+
+- Desktop Environment (GNOME or KDE).
+  - KDE uses the Qt Widget Toolkit.
+  - Mate is GNOME 2 using GTK 2.
+  - Cinamon is GNOME 2 using GTK 3.
+
+- Desktop Application. Applications work on any Desktop Environment. However,
+  KDE applications might not look good on GNOME, and vice versa.
+

@@ -1,0 +1,54 @@
+---------------------------------------
+ X Window System
+---------------------------------------
+
+Created by MIT in 1984.
+Version 11 release in 1987.
+XFree86 release in 1991.
+XFree86 forked into X.org in 2004.
+XFree86 stopped in 2008.
+
+---------------------------------------
+
+X Window Supports
+
+- Screens.
+- Drawing windows.
+- Moving windows.
+- Mice.
+- Keyboard.
+
+---------------------------------------
+
+X Window Architecture
+
+  ┌───────────────────┬────────────────────┐
+  │ X Client Terminal │  X Client Browser  │ Desktop Applications
+  ├───────────────────┴────────────────────┤
+  │         ^                    ^         │
+  │         |                    |         │ X Protocol
+  │         v                    v         │
+  ├────────────────────────────────────────┤
+  │               X Server                 │
+  ├────────────────────────────────────────┤
+  │      ^             ^            |      │
+  │      |             |            |      │
+  │      |             |            v      │
+  ├─────────────┬─────────────┬────────────┤
+  │  Keyboard   │    Mouse    │   Screen   │
+  └─────────────┴─────────────┴────────────┘
+
+---------------------------------------
+ Wayland
+---------------------------------------
+
+Replaces X Window System.
+Created in 2010.
+Released in 2012.
+
+- Simpler architecture. There's no server in the middle.
+- Doesn't handle drawing is responsability of the client.
+- Many functions moved to the kernel.
+- Wayland supports an X server as client.
+- Wayland doesn't have network ability.
+

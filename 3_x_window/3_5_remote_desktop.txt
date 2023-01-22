@@ -1,0 +1,81 @@
+---------------------------------------
+ About Remote Desktop Protocols
+---------------------------------------
+
+Remote Desktop Protocols
+- X Window
+- VNC
+- RDP
+- SPICE
+
+---------------------------------------
+
+X Window
+
+- Standard on Unix/Linux systems.
+- Supports remote desktop by default.
+- Supports drawinf objects (screens, windows, pointer) instead of bitmaps.
+- Draws while remote desktop of only remote applications.
+- Does not support 3D desktops.
+
+In a local GUI, both X Window Client and Server reside in the same machine.
+
+                                     ┌─────────────────────┐
+      +------------------------------│   X Window Client   │
+      |                              ├─────────────────────┤
+  Localhost                          │ Desktop Environment │
+  Network                            ├─────────────────────┤
+  Interface                          │    Window Manager   │
+      |        ┌─────────────────────┴─────────────────────┤   ┌──────────┐
+      |        │             GUI/Widget Toolkit            │   │ Mouse    │
+      |        ├───────────────────────────────────────────┤   ├──────────┤
+      +--------│              X Window Server              │<->│ Keyboard │
+               ├───────────────────────────────────────────┤   ├──────────┤
+               │          Linux Operating System           │   │ Screeen  │
+               └───────────────────────────────────────────┘   └──────────┘
+
+
+Remote Host Updates Client's Framebuffer
+
+                 Remote X Client                                   Local X Server
+
+  ┌─────────────────────┐
+  │   X Window Client   │------------------------+
+  ├─────────────────────┤                        |
+  │ Desktop Environment │                     Network
+  ├─────────────────────┤                        |
+  │    Window Manager   │                        |
+  ├─────────────────────┴─────────────────────┐  |                                                  ┌──────────┐
+  │             GUI/Widget Toolkit            │  |                                                  │ Mouse    │
+  ├───────────────────────────────────────────┤  |  ┌───────────────────────────────────────────┐   ├──────────┤
+  │              X Window Server              │  +--│              X Window Server              │<->│ Keyboard │
+  ├───────────────────────────────────────────┤     ├───────────────────────────────────────────┤   ├──────────┤
+  │          Linux Operating System           │     │          Linux Operating System           │   │ Screeen  │
+  └───────────────────────────────────────────┘     └───────────────────────────────────────────┘   └──────────┘
+
+---------------------------------------
+
+VNC
+
+- Virtual Network Computing.
+- Created by Olivetti & Oracle Research Lab.
+- RealVNC in 2002.
+- Remote Frame Buffer using RFB protocol. Transmits a photo of the screen.
+- Transmits keyboard and mouse events.
+
+- Network heavy.
+- Easy to implement.
+
+---------------------------------------
+
+RDP
+
+- Remote Desktop Protocol.
+- Standard on MS-Windows.
+
+---------------------------------------
+
+SPICE
+
+- Simple Protocol for Independent Computing Environments.
+
